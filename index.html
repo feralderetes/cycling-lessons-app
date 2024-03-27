@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cycling lessons 🚲</title>
+    <style>
+      body {
+        background: rgb(94, 107, 64);
+        color: rgb(94, 107, 64);
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-weight: 300;
+        text-align: center;
+      }
+      h1 {
+        background: rgb(94, 107, 64);
+        border: 2px dashed rgba(255, 236, 218, 0.7);
+        border-radius: 15px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        color: rgb(255, 236, 218);
+        font-family: "Courier New", Courier, monospace;
+        font-size: 50px;
+        margin: 0 auto;
+        max-width: fit-content;
+        padding: 15px 40px;
+        text-transform: uppercase;
+      }
+      h2 {
+        color: rgb(182, 73, 38);
+        font-family: "Courier New", Courier, monospace;
+        font-size: 30px;
+      }
+      img {
+        border: 2px solid rgba(0, 0, 0, 0.2);
+        border-radius: 50px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      p {
+        font-size: 20px;
+        line-height: 1.5;
+        margin: 40px 20px;
+        text-align: justify;
+      }
+      button {
+        background: rgb(247, 93, 110);
+        border: none;
+        border-radius: 50px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        color: white;
+        display: block;
+        font-size: 24px;
+        margin: 20px auto 15px auto;
+        padding: 20px 30px;
+        transition: all 200ms ease-in-out;
+      }
+      button:hover {
+        background: rgb(241, 84, 102);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+      }
+
+      .container {
+        background: linear-gradient(
+          rgb(255, 236, 218) 20%,
+          rgb(228, 204, 181) 60%,
+          rgb(251, 220, 171) 100%
+        );
+        border-radius: 10px;
+        box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
+        margin: 0 auto;
+        max-width: 900px;
+        padding: 40px 80px;
+      }
+      .email-message {
+        font-size: 14px;
+        margin: 0 auto 80px auto;
+      }
+      .read-more {
+        display: block;
+        font-size: 18px;
+        font-weight: 300;
+      }
+      .wikihow {
+        color: rgb(94, 107, 64);
+        font-weight: 500;
+        text-decoration: none;
+      }
+      .wikihow:hover {
+        text-decoration: underline;
+      }
+      .footer {
+        color: rgb(182, 73, 38);
+        font-family: monospace;
+        font-size: 12px;
+      }
+      .coder {
+        color: rgb(182, 73, 38);
+        text-decoration: none;
+      }
+      .coder:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Free cycling lessons</h1>
+      <h2>All ages welcome!</h2>
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/104/642/original/FernandaAlderetes_BerlinBike.jpg?1700582157"
+        alt="Bicycle in Berlin"
+      />
+      <p>
+        Learning how to ride a bike can be challenging at any age. But let's
+        face it, the older we get the greater the fear of falling and hurting
+        ourselves. If you are wanting to experience the pleasure and freedom
+        that a bike can provide but are wondering if you can still learn at this
+        age... The answer is: <em>"Absolutely you can!"</em>. <br />
+        From 0 to 100+ years old you can join our classes, where we will teach
+        you everything you need to know about riding techniques, safety, basics
+        of maintanance and repairs, general traffic rules and different tips and
+        tricks to make sure you enjoy your ride while keeping yourself (and
+        others) safe.
+        <br />
+        We offer group lessons for children, teenagers and adults absolutely
+        <strong>free of charge</strong>! All you need to bring is your bike, a
+        helmet and a highly motivated spirit.
+      </p>
+      <button class="sign-up-button">Sign up to our class</button>
+      <div class="email-message">
+        You will receive further info via email ✉️
+      </div>
+      <span class="read-more"
+        >Read more about learning to ride a bike on
+        <a
+          href="https://www.wikihow.com/Ride-a-Bicycle"
+          target="_blank"
+          class="wikihow"
+          >Wikihow</a
+        ></span
+      >
+      <hr />
+      <div class="footer">
+        This page was built by
+        <a
+          href="https://www.linkedin.com/in/fernanda-alderetes/"
+          target="_blank"
+          class="coder"
+          ><strong>María Fernanda Alderetes</strong></a
+        >
+      </div>
+    </div>
+    <script>
+      function ageGroup(age) {
+        if (age < 13) {
+          return "children 🚲";
+        } else {
+          if (age < 18) {
+            return "teenagers 🚴‍♀️";
+          } else {
+            return "adults 🚴‍♂️";
+          }
+        }
+      }
+
+      function informationIsComplete(name, email, age) {
+        return name.length > 0 && email.length > 0 && age.length > 0;
+      }
+
+      function signUp() {
+        let name = prompt("What is your name?");
+        let email = prompt("What is your email address?");
+        let age = prompt("What is your age?");
+        let emailMessage = document.querySelector(".email-message");
+
+        if (informationIsComplete(name, email, age)) {
+          alert(
+            `Thanks ${name}! You will be placed in our class for ` +
+              ageGroup(age)
+          );
+          emailMessage.innerHTML = `Welcome ${name}! 🎉 We've sent you an email to ${email}`;
+        } else {
+          alert(
+            "Sorry, we are missing some of your information ☹️. Please try again 🫶"
+          );
+        }
+      }
+
+      let singUpButton = document.querySelector(".sign-up-button");
+      singUpButton.addEventListener("click", signUp);
+    </script>
+  </body>
+</html>
